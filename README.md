@@ -64,8 +64,6 @@ docs/        Setup guide, architecture notes, presentation script, screenshots
 - Canvas LMS REST API
 - Plain JavaScript modules, no build step and no dependencies
 
-More detail in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Shipping it to atme.tech and the Chrome Web Store? See [docs/SHIPPING.md](docs/SHIPPING.md). Presenting it? See [docs/DEMO.md](docs/DEMO.md).
-
 ## Privacy
 
 Everything @me knows is stored locally in Chrome, and Google Calendar event details are never sent to an AI service. Full details are in the [privacy policy](site/privacy.html). Your AI key and Canvas token never leave your computer except to talk to those services. Google access is read-only for your own events, and @me can only edit the calendars it creates.
