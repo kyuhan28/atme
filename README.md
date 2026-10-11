@@ -16,7 +16,7 @@ Built at HackRU '26. Website: **[atme.tech](https://atme.tech)**
 - **Gets your class times in fast.** Paste or screenshot your class schedule and @me adds every class at once, or use the class-times form or chat.
 - **Plans around your life.** Study sessions fit around classes, work, and your Google Calendar events. Weekdays by default, weekends if you want them, and spread out early or kept closer to deadlines, your choice. Bigger exams get more time.
 - **Starts projects early.** Projects get milestone sessions from the day they're assigned: plan, build, test, and submit, instead of a last-minute push.
-- **Tells you what to do.** Every session has a type, like 💻 Coding practice, 🧠 Concept review, or ⏱️ Practice exam, with instructions for that kind of work.
+- **Tells you what to do.** Every session has a type, like coding practice, concept review, or practice exam, with instructions for that kind of work.
 - **Catches missed sessions.** If a session passes without you starting it, @me asks whether you did it and reschedules it if not.
 - **Works both ways with Google Calendar.** Study sessions go on "@me Study," class times on "@me Classes" as weekly repeating events, and every exam, quiz, and assignment on "@me Deadlines" with reminders. @me shows your own events by name, checks for new ones every few minutes, and moves study sessions that clash.
 - **Shows what you're studying.** Every block says what it covers: the lecture topic, a recitation recap, the lectures a session reviews and which exam it's for, or the lecture a lab builds on.
@@ -25,11 +25,11 @@ Built at HackRU '26. Website: **[atme.tech](https://atme.tech)**
 - **Protects your sleep.** Nothing runs past your cutoff, and nights before exams end an hour early.
 - **Keeps you focused.** Focus mode blocks YouTube, Instagram, TikTok, and Reddit during sessions.
 - **Checks what you actually know.** Each session ends with a short quiz and a check-in. CS classes get code-tracing, Big-O, and spot-the-bug questions with real code, even offline.
-- **Shows how you're really doing.** A 📊 Proficiency panel above the calendar gives every lecture topic a bar, a level from Beginner to Mastered, and a trend, built only from scored questions. Hit **Check** on any topic for a 5-question self-check and watch the bar move.
+- **Shows how you're really doing.** A proficiency panel above the calendar gives every lecture topic a bar, a level from Beginner to Mastered, and a trend, built only from scored questions. Hit **Check** on any topic for a 5-question self-check and watch the bar move.
 - **A tutor built in.** After practice, **Grade my answer** has Gemini check your free-response answer against the model answer, and **Explain it** walks through any question you missed, using your own slides.
 - **Exam practice on demand.** Say "review for my midterm" and @me writes a practice set: multiple choice plus free-response with model answers, from your notes and slides or just the topics. Your score updates your readiness and points you to what to review.
 - **Quizzes like your class.** Add lecture slides (PowerPoint or PDF), notes, a study guide, or an old exam, and quizzes are written from them in your professor's terms and code style. Practice exams copy the old exam's style, and each answer says which slide it came from. Weak topics get extra sessions, and everything else comes back on a spaced-review schedule.
-- **Handles surprises.** Add a surprise quiz, or let @me spot a new one on Canvas, and it squeezes in prep and raises a red ❗ on the toolbar.
+- **Handles surprises.** Add a surprise quiz, or let @me spot a new one on Canvas, and it squeezes in prep and raises a red exclamation on the toolbar.
 - **Explains itself, and lets you take it back.** Tap any session to see why it's at that time. Undo any change, and Google Calendar follows.
 - **Talks like a friend.** Say "my exam got moved to Thursday" or "I work Tue and Thu 2-6pm" and it updates your plan. Type **/help** to see everything it can do, or **/** for shortcuts like `/plan` and `/practice midterm`.
 
