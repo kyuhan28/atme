@@ -1,0 +1,15 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Packaged builds and signing keys. Never commit a .pem file.
+*.zip
+*.crx
+*.pem
+
+# Local secrets, just in case
+.env
+.env.*
+secrets.json

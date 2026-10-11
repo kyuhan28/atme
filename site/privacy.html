@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy | @me</title>
+<meta name="description" content="How the @me Chrome extension handles your data: stored in your browser, no @me servers, no ads, and no selling data.">
+<link rel="canonical" href="https://atme.tech/privacy.html">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="index.html" aria-label="@me home">@me</a>
+    <nav aria-label="Main"><a href="index.html">Home</a><a class="btn small" href="index.html#install">Get @me</a></nav>
+  </header>
+
+  <main class="doc">
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated October 10, 2026</p>
+
+    <p>@me is a Chrome extension that plans study time around your classes and calendar. This policy explains what data @me uses, where it goes, and how to delete it. In short: @me has no servers of its own, everything it knows is stored in Chrome on your computer, and we never sell your data or use it for ads.</p>
+
+    <h2>Where your data is stored</h2>
+    <p>@me stores everything in your browser's local extension storage, on your computer. The people who make @me don't receive or have access to any of it. This includes:</p>
+    <ul>
+      <li>Your classes, deadlines, lecture topics, class times, and study plan</li>
+      <li>Course materials you add, like slides and notes, stored as text</li>
+      <li>Quiz and practice results, proficiency scores, and check-ins</li>
+      <li>Your settings, your Gemini API key, and your Canvas access token, if you add them</li>
+      <li>A copy of your Google Calendar events for the next few weeks, so @me can plan around them</li>
+    </ul>
+
+    <h2>Google Calendar</h2>
+    <p>When you connect Google Calendar, @me asks for three permissions:</p>
+    <table>
+      <tr><th>Permission</th><th>What @me does with it</th></tr>
+      <tr><td>See events on your calendars</td><td>Reads your primary calendar's events for the next few weeks, so study sessions never overlap them, and shows them on the @me calendar.</td></tr>
+      <tr><td>See when you're busy</td><td>A backup way to find busy times if event details aren't available.</td></tr>
+      <tr><td>Make and edit calendars @me creates</td><td>Creates up to three calendars, "@me Study," "@me Classes," and "@me Deadlines," and keeps them in sync. @me never edits or deletes your own events.</td></tr>
+    </table>
+    <p>Your Google Calendar data is used only to show your schedule in @me and plan around it. It is never sent to an AI service, never shared with anyone, never used for ads, and never used to train AI models. The copy @me keeps stays in your browser.</p>
+    <p>@me's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p>You can disconnect Google at any time in @me's Settings, or at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+    <h2>AI features</h2>
+    <p>AI features are optional, and run on Google's Gemini API. If you add your own free Gemini API key from Google AI Studio, @me sends requests straight from your browser to Google, using your key. Depending on the feature, a request can include:</p>
+    <ul>
+      <li>Syllabus files or text, class schedules, and screenshots you upload</li>
+      <li>Course materials you add, like slides and notes</li>
+      <li>Your chat messages, and the classes, deadlines, lecture topics, study sessions, and preferences @me needs to answer them</li>
+      <li>Topics, session names, and your practice answers, to write questions, grade free-response answers, and explain missed questions</li>
+    </ul>
+    <p>Google Calendar event names and details are never included. For the daily briefing, @me only tells Gemini that those times are busy.</p>
+    <p>What happens to a request after it reaches Google is governed by the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>, which you agree to when you create your key. Note that Google's terms for the free tier allow Google to use what you send to improve its products, so avoid adding anything you wouldn't want shared that way. Without a key, @me uses built-in features that run entirely in your browser.</p>
+
+    <h2>Canvas</h2>
+    <p>If you connect Canvas, @me uses your access token to read your courses, assignments, calendar events, syllabus pages, and grade weights directly from your school's Canvas site. The token stays in your browser. Canvas data is used only to build your plan.</p>
+
+    <h2>What @me doesn't do</h2>
+    <ul>
+      <li>No @me servers, accounts, or sign-ups</li>
+      <li>No analytics, tracking, or cookies</li>
+      <li>No ads, and no selling or sharing your data</li>
+      <li>No access to sites you visit. During a study session, focus mode blocks a short list of distracting sites (YouTube, Instagram, TikTok, and Reddit) without reading anything on them</li>
+    </ul>
+
+    <h2>Deleting your data</h2>
+    <ul>
+      <li><b>Remove @me from Chrome</b> to delete everything it stored, including your settings, Gemini API key, and Canvas token.</li>
+      <li><b>Clear all @me data</b> in @me's Settings deletes your classes, plan, course materials, and history, but keeps your settings. To remove your Gemini API key or Canvas token, delete them in Settings.</li>
+      <li>To remove what @me added to Google Calendar, delete the "@me Study," "@me Classes," and "@me Deadlines" calendars in Google Calendar's settings.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>@me is made for college students and isn't directed to children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes, we'll update it here and change the date at the top.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Email <a href="mailto:hankyumin05@gmail.com">hankyumin05@gmail.com</a>.</p>
+  </main>
+</div>
+<footer>
+  <div class="wrap">
+    <a class="mark" href="index.html" aria-label="@me home" style="font-size:20px">@me</a>
+    <a href="index.html">Home</a>
+    <a href="https://github.com/kyuhan28/atme">GitHub</a>
+    <span class="right">© 2026 @me</span>
+  </div>
+</footer>
+</body>
+</html>

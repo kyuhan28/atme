@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@me, your study operator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="top">
+  <div class="brand">@me</div>
+  <ol class="steps" id="steps">
+    <li data-s="0"><span>1</span>Add classes</li>
+    <li data-s="1"><span>2</span>Set up</li>
+    <li data-s="2"><span>3</span>Plan</li>
+    <li data-s="3"><span>4</span>Study</li>
+  </ol>
+  <div class="status">
+    <button class="chip-s" id="stAI" title="Gemini AI: open Settings"><i></i>AI</button>
+    <button class="chip-s" id="stGoogle" title="Google Calendar"><i></i>Google Calendar</button>
+    <button class="chip-s" id="stCanvas" title="Canvas"><i></i>Canvas</button>
+  </div>
+  <div class="ai" id="ai"><i></i><span>AI idle</span></div>
+  <div class="tbs"><button class="tb" id="briefBtn">☀️ Daily briefing</button>
+    <button class="tb" id="undoBtn" disabled aria-keyshortcuts="Control+Z">↶ Undo</button>
+    <button class="tb" id="settingsBtn" aria-label="Settings">⚙ Settings</button></div>
+</div>
+
+<div class="main">
+  <aside>
+    <section>
+      <h2>Classes</h2>
+      <div id="courses"></div>
+      <button class="btn ghost mini" id="addClass">Add a class</button>
+    </section>
+    <section>
+      <h2>Upcoming</h2>
+      <ul class="alist" id="alist"></ul>
+      <button class="btn ghost mini sq" id="sqBtn">＋ Add a surprise quiz</button>
+    </section>
+    <section>
+      <h2 id="readyH">Readiness</h2>
+      <div id="topics"></div>
+    </section>
+    <section>
+      <h2>Review queue</h2>
+      <div id="reviews"></div>
+    </section>
+    <section>
+      <h2>Study time</h2>
+      <div class="stat"><span>Planned</span><b id="sPlan">0h</b></div>
+      <div class="stat"><span>Studied</span><b id="sStud">0h</b></div>
+      <div class="stat"><span>Sessions</span><b id="sSes">0 of 0</b></div>
+      <div class="stat"><span>Weekly goal</span><b id="sGoal">Not set</b></div>
+      <div class="track"><i id="sTrack"></i></div>
+    </section>
+    <section>
+      <h2>Study settings</h2>
+      <label class="set"><input type="checkbox" id="setGrades" checked> Prioritize by grade weight</label>
+      <label class="set"><input type="checkbox" id="setFocus" checked> Focus mode in sessions</label>
+      <label class="set" for="setBed">Done studying by
+        <select id="setBed"><option value="22">10 PM</option><option value="23" selected>11 PM</option><option value="24">Midnight</option></select></label>
+      <label class="set"><input type="checkbox" id="setClassCal"> Class times in Google Calendar</label>
+      <label class="set"><input type="checkbox" id="setDueCal"> Assignments and exams in Google Calendar</label>
+      <label class="set" for="setTermEnd">Semester ends
+        <input type="date" id="setTermEnd" class="dateset"></label>
+      <label class="set" for="setWeekend">Study on weekends
+        <select id="setWeekend"><option value="none">No</option><option value="sat">Saturdays</option><option value="sun">Sundays</option><option value="both">Both days</option></select></label>
+      <label class="set" for="setRhythm">Rhythm
+        <select id="setRhythm"><option value="steady">Steady</option><option value="late">Closer to deadlines</option></select></label>
+      <label class="set" for="setBrief">Morning briefing
+        <select id="setBrief"><option value="0">Off</option><option value="7">7 AM</option><option value="8" selected>8 AM</option><option value="9">9 AM</option></select></label>
+    </section>
+    <section>
+      <h2>Remembered</h2>
+      <ul class="mem" id="mem"></ul>
+    </section>
+  </aside>
+
+  <section class="center" id="center">
+    <section class="prof" id="prof" aria-label="Proficiency by topic" hidden></section>
+    <div class="calnav">
+      <button class="tb" id="prevW" aria-label="Previous week">‹</button>
+      <button class="tb" id="thisW">This week</button>
+      <button class="tb" id="nextW" aria-label="Next week">›</button>
+      <b id="wkLabel"></b>
+      <span class="muted" style="margin-left:auto">Tap a study block to see why it's there</span>
+    </div>
+    <div class="calwrap" id="calwrap"><div class="cal" id="cal"></div><div class="empty-cal" id="emptyCal">Your calendar is empty. Add a class to get started.</div></div>
+    <div class="legend">
+      <span><i style="background:var(--surface)"></i>Classes and busy time</span>
+      <span><i style="background:#EAF1FB;box-shadow:inset 3px 0 0 #4A78C2"></i>Google Calendar</span>
+      <span><i style="background:var(--exam-soft);box-shadow:inset 3px 0 0 var(--exam)"></i>Exam</span>
+      <span><i style="background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)"></i>Study session</span>
+      <span><i style="border:1px dashed var(--accent)"></i>Spaced review</span>
+      <span><i style="background:#EEF0F3;box-shadow:inset 3px 0 0 var(--text)"></i>Group review</span>
+      <span><i style="background:var(--accent)"></i>Done</span>
+    </div>
+  </section>
+
+  <section class="chat" id="chat" role="dialog" aria-label="@me assistant">
+    <div class="hd"><div class="av" aria-hidden="true">@</div><div class="who"><b>@me</b><small>Your study operator</small></div>
+      <button class="x" id="helpBtn" aria-label="Help: what @me can do" title="What can @me do? (/help)">?</button>
+      <button class="x" id="close" aria-label="Minimize @me">–</button></div>
+    <div class="stream" id="stream" aria-live="polite"></div>
+    <div class="composer">
+      <div class="slashmenu" id="slashMenu" role="listbox" aria-label="Commands" hidden></div>
+      <input class="field" id="input" placeholder="Ask me anything, or type /" aria-label="Message @me" aria-autocomplete="list" aria-controls="slashMenu">
+      <button class="btn" id="send">Send</button>
+    </div>
+  </section>
+</div>
+<div class="nudge" id="nudge">Hey, I'm @me 👋 New semester? Let's get your classes in and build a study plan.</div>
+<button class="launch" id="launch" aria-label="Open @me" aria-expanded="false">@<span class="dot"></span><span class="bang" aria-hidden="true">!</span></button>
+<div class="focusbar" id="focusbar" role="status"><span id="focusText">Focus mode on</span><button class="end" id="endBtn">End session</button></div>
+<div class="modal" id="sqModal" role="dialog" aria-modal="true" aria-labelledby="sqH"><div class="box">
+  <h3 id="sqH">Add a surprise quiz 😬</h3>
+  <p class="muted" style="margin:0">Professor sprang one on you? Tell me about it and I'll squeeze in some prep.</p>
+  <label for="sqCourse">Class</label><select class="field" id="sqCourse"></select>
+  <label for="sqName">What is it?</label><input class="field" id="sqName" value="Surprise quiz">
+  <label for="sqTopics">What does it cover?</label><input class="field" id="sqTopics" placeholder="e.g. Chapter 4, derivatives, the last two lectures">
+  <div class="row2"><div><label for="sqDate">Date</label><input class="field" type="date" id="sqDate"></div>
+    <div><label for="sqTime">Time (optional)</label><input class="field" type="time" id="sqTime"></div></div>
+  <p class="muted" id="sqErr" style="color:var(--exam);margin:8px 0 0" hidden></p>
+  <div class="btns"><button class="btn" id="sqAdd">Add quiz</button><button class="btn ghost" id="sqCancel">Cancel</button></div>
+</div></div>
+<div class="modal" id="ctModal" role="dialog" aria-modal="true" aria-labelledby="ctH"><div class="box">
+  <h3 id="ctH">Add class times</h3>
+  <p class="muted" style="margin:0">So I never plan study time on top of class.</p>
+  <label for="ctCourse">Class</label><select class="field" id="ctCourse"></select>
+  <label for="ctType">Type</label>
+  <select class="field" id="ctType"><option value="lecture">Lecture</option><option value="lab">Lab</option><option value="recitation">Recitation</option><option value="discussion">Discussion</option></select>
+  <label>Days</label>
+  <div class="chips" id="ctDays">
+    <button class="chip" aria-pressed="false" data-v="mon">Mon</button><button class="chip" aria-pressed="false" data-v="tue">Tue</button>
+    <button class="chip" aria-pressed="false" data-v="wed">Wed</button><button class="chip" aria-pressed="false" data-v="thu">Thu</button>
+    <button class="chip" aria-pressed="false" data-v="fri">Fri</button></div>
+  <div class="row2"><div><label for="ctStart">Starts</label><input class="field" type="time" id="ctStart"></div>
+    <div><label for="ctEnd">Ends</label><input class="field" type="time" id="ctEnd"></div></div>
+  <p class="muted" id="ctErr" style="color:var(--exam);margin:8px 0 0" hidden></p>
+  <div class="btns"><button class="btn" id="ctSave">Add times</button><button class="btn ghost" id="ctCancel">Cancel</button></div>
+</div></div>
+<script src="boot.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

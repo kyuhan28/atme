@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>@me settings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="options">
+<main>
+  <h1>@me settings</h1>
+  <p class="muted">Everything here stays on this computer, in Chrome's extension storage.</p>
+
+  <section id="geminiBox">
+    <h2>Gemini API key</h2>
+    <p class="muted">@me uses Google's Gemini to read syllabi, write quizzes, and understand chat. It's free: in Google AI Studio, click Get API key, then Create API key. No credit card needed. On the free tier, Google may use what you send to improve its products.</p>
+    <label for="geminiKey">API key</label>
+    <input id="geminiKey" type="password" autocomplete="off" placeholder="AIza...">
+    <label for="geminiModel">Model</label>
+    <select id="geminiModel"><option value="gemini-flash-latest">Gemini Flash (latest, free tier)</option></select>
+    <p class="muted small" style="margin:6px 0 0">Test connection loads the models your key can use. Stick with a Flash model, since those are on the free tier.</p>
+    <div class="row"><button class="btn" id="saveGemini">Save</button><button class="btn ghost" id="testGemini">Test connection</button></div>
+    <p class="status" id="geminiMsg"></p>
+  </section>
+
+  <section>
+    <h2>Google Calendar</h2>
+    <p class="muted">@me reads when you're busy and puts study sessions on its own "@me Study" calendar, so your main calendar stays untouched.</p>
+    <div class="row"><button class="btn" id="gConnect">Connect Google Calendar</button><button class="btn ghost" id="gDisconnect">Disconnect</button></div>
+    <p class="status" id="gMsg"></p>
+  </section>
+
+  <section>
+    <h2>Canvas</h2>
+    <p class="muted">In Canvas, go to Account, Settings, and click New Access Token. Set an expiration date so it can't live forever.</p>
+    <label for="domain">Canvas address</label>
+    <input id="domain" placeholder="canvas.yourschool.edu">
+    <label for="token">Access token</label>
+    <input id="token" type="password" autocomplete="off">
+    <div class="row"><button class="btn" id="cConnect">Connect Canvas</button><button class="btn ghost" id="cTest">Test connection</button></div>
+    <p class="status" id="cMsg"></p>
+  </section>
+
+  <section>
+    <h2>Demo mode</h2>
+    <label class="check"><input type="checkbox" id="demo"> Make study sessions last 10 seconds, for live demos</label>
+  </section>
+
+  <section>
+    <h2>Start over</h2>
+    <p class="muted">Clears your classes, plan, and history from @me. Your settings and the "@me Study" Google calendar stay.</p>
+    <button class="btn danger" id="reset">Clear all @me data</button>
+    <p class="status" id="rMsg"></p>
+  </section>
+  <p class="muted" style="margin-top:28px"><a href="https://atme.tech" target="_blank" rel="noopener">atme.tech</a> &nbsp; <a href="https://atme.tech/privacy.html" target="_blank" rel="noopener">Privacy policy</a></p>
+</main>
+<script type="module" src="options.js"></script>
+</body>
+</html>

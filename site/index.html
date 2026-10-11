@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@me: your study operator</title>
+<meta name="description" content="@me is a Chrome extension that reads your syllabus, plans study time around your classes and Google Calendar, and moves things when your week changes.">
+<link rel="canonical" href="https://atme.tech/">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atme.tech/">
+<meta property="og:title" content="@me: your study operator">
+<meta property="og:description" content="Reads your syllabus, plans your studying on Google Calendar, and keeps the plan working when your week changes.">
+<meta property="og:image" content="https://atme.tech/assets/share.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="index.html" aria-label="@me home">@me</a>
+    <nav aria-label="Main">
+      <a href="#how" class="hide-sm">How it works</a>
+      <a href="privacy.html" class="hide-sm">Privacy</a>
+      <a href="https://github.com/kyuhan28/atme" class="hide-sm">GitHub</a>
+      <a class="btn small" href="#install">Get @me</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Your syllabus, planned into your actual week.</h1>
+        <p class="lead">@me is a Chrome extension that reads your syllabus, schedules study time around your classes and Google Calendar, and moves things when your week changes.</p>
+        <div class="ctas">
+          <a class="btn" href="#install">Get @me</a>
+          <a class="btn quiet" href="#how">See how it works</a>
+        </div>
+        <p class="note">Free and open source. Powered by Google Gemini's free tier. Your data stays in Chrome.</p>
+      </div>
+
+      <figure class="week" aria-label="A week in @me: classes, study sessions, and a session moved for a new Google Calendar event">
+        <div class="week-hd" aria-hidden="true"><span></span><span class="today">Mon<b>5</b></span><span>Tue<b>6</b></span><span>Wed<b>7</b></span><span>Thu<b>8</b></span><span>Fri<b>9</b></span></div>
+        <div class="week-bd" aria-hidden="true">
+          <div class="hrs"><span style="top:calc(var(--hour)*1)">5p</span><span style="top:calc(var(--hour)*2)">6p</span><span style="top:calc(var(--hour)*3)">7p</span><span style="top:calc(var(--hour)*4)">8p</span><span style="top:calc(var(--hour)*5)">9p</span></div>
+          <div class="day">
+            <div class="blk study" style="--i:0;top:calc(var(--hour)*3);height:calc(var(--hour) - 4px)"><b>Recursion</b><span>💻 Coding</span></div>
+          </div>
+          <div class="day">
+            <div class="blk cls" style="top:calc(var(--hour)*2);height:calc(var(--hour)*2.5 - 4px)"><b>Lecture</b><span>📖 Recursion II</span></div>
+          </div>
+          <div class="day">
+            <div class="blk study ghost" style="--i:1;top:calc(var(--hour)*1);height:calc(var(--hour) - 4px)"><b>Project 2</b><span>🛠️ Build</span></div>
+            <div class="blk gev" style="top:calc(var(--hour)*1);height:calc(var(--hour) - 4px)"><b>Dentist</b><span>Google</span></div>
+            <div class="blk study moved" style="top:calc(var(--hour)*2.5);height:calc(var(--hour)*1.5 - 4px)"><b>Project 2</b><span>🛠️ Build</span></div>
+          </div>
+          <div class="day">
+            <div class="blk cls" style="top:0;height:calc(var(--hour)*.83 - 4px)"><b>Recitation</b><span>4:00 PM</span></div>
+            <div class="blk study" style="--i:2;top:calc(var(--hour)*3.5);height:calc(var(--hour) - 4px)"><b>Stacks</b><span>🧠 Concepts</span></div>
+          </div>
+          <div class="day">
+            <div class="blk exam" style="top:calc(var(--hour)*.5);height:calc(var(--hour) - 4px)"><b>🎯 Quiz 3</b><span>4:30 PM</span></div>
+            <div class="blk study" style="--i:3;top:calc(var(--hour)*3);height:calc(var(--hour) - 4px)"><b>Mock exam</b><span>⏱️ Timed</span></div>
+          </div>
+        </div>
+        <p class="week-msg"><b>Heads up!</b> "Dentist" overlapped your study time, so I moved Project 2 to 6:30 PM.</p>
+      </figure>
+    </div>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <p class="lede">Three steps, and the third one never stops.</p>
+      <ol class="steps">
+        <li><h3>Bring your classes</h3><p>Import a syllabus as a PDF, Word file, or pasted text, connect Canvas, or paste your class schedule. @me finds every exam, lab, project, lecture topic, and grade weight.</p></li>
+        <li><h3>Get a plan that fits</h3><p>Study sessions land around your classes and Google Calendar events, before your bedtime, with more time for the exams that count most. Projects start the day they're assigned.</p></li>
+        <li><h3>Let it keep up</h3><p>Add an event and @me moves the session that clashed. Quizzes from your own slides show what you know, and the plan shifts toward what you don't.</p></li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Built around how classes actually work</h2>
+      <p class="lede">Not a to-do list with reminders. @me knows what's on the exam, what it's worth, and how well you understand it.</p>
+      <div class="features">
+        <div class="feature"><h3><span class="ic" aria-hidden="true">📖</span>Reads the class you're taking</h3><p>Lecture topics, recitation sections, holidays, and grade weights. An old syllabus can move to this semester on the same weekdays.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">📅</span>Lives in Google Calendar</h3><p>Study sessions, class times, and deadlines each get their own calendar, with reminders. Your own events stay untouched.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">💻</span>Practice that looks like your exams</h3><p>CS quizzes with real code, and practice sets with free-response model answers, written from your slides and notes.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">📊</span>Shows what you know</h3><p>A proficiency bar for every topic, built only from scored questions. A five-question self-check is one click away.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">🛠️</span>Starts projects early</h3><p>Big assignments get milestone sessions from the day they're assigned: plan, build, test, and submit.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">⏭️</span>Skips what doesn't matter</h3><p>Give a gen-ed no study time, skip a session, or mark a topic as not important, and that time goes where it counts.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">🔕</span>Keeps you focused</h3><p>During a session, YouTube, Instagram, TikTok, and Reddit are blocked until the timer ends.</p></div>
+        <div class="feature"><h3><span class="ic" aria-hidden="true">↩️</span>Undo anything</h3><p>Every change can be undone, and Google Calendar follows along. Every session also explains why it's at that time.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Your week, explained</h2>
+      <p class="lede">Every block says what it covers, and a red ❗ tells you when @me changed something on its own.</p>
+      <div class="shots">
+        <figure class="wide"><img src="assets/proficiency.jpg" width="1600" height="369" alt="The proficiency panel: each lecture topic has a bar, a percentage, a level from Beginner to Mastered, and a trend arrow" loading="lazy"><figcaption>Proficiency for every topic, built only from scored questions.</figcaption></figure>
+        <figure><img src="assets/dashboard.jpg" width="1600" height="1172" alt="A midterm week in @me: the exam, project milestone sessions, a lab session, and a practice exam, each labeled with what it covers" loading="lazy"><figcaption>Every session shows what it covers, from the midterm's topics to the lecture a project builds on.</figcaption></figure>
+        <figure><img src="assets/block-menu.jpg" width="1060" height="860" alt="The menu on a lecture block, with options to skip the class, mark a day off, remove it from every week, or mark its topic not important" loading="lazy"><figcaption>Skip a class, mark a day off, or drop a topic from any block.</figcaption></figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Your data stays with you</h2>
+      <p class="lede">@me has no servers of its own, so there's nowhere for your data to go.</p>
+      <ul class="privacy-list">
+        <li>Everything @me knows is stored in Chrome on your computer. Remove @me from Chrome and it's all gone.</li>
+        <li>Google Calendar is read to plan around your events. @me only edits the calendars it creates, and never sends your event details to an AI service.</li>
+        <li>AI features use your own free Gemini API key, sent straight from your browser to Google.</li>
+        <li>No ads, no tracking, and no selling your data.</li>
+      </ul>
+      <a href="privacy.html">Read the full privacy policy</a>
+    </section>
+
+    <section id="install">
+      <h2>Get @me</h2>
+      <p class="lede">Free for Google Chrome on Windows, Mac, Linux, and Chromebooks. Installing takes about two minutes.</p>
+      <div class="install">
+        <div class="dl">
+          <a class="btn big" href="atme-extension.zip" download>Download @me</a>
+          <p class="note">Version 1.2.0, a small zip file. Also on <a href="https://github.com/kyuhan28/atme/releases/latest">GitHub</a>.</p>
+          <p class="why">@me isn't on the Chrome Web Store yet, so you install it with Chrome's Developer mode. It's safe: you can see every line of its code on GitHub, and you can remove it anytime.</p>
+          <details>
+            <summary>What you'll need</summary>
+            <ul>
+              <li>Google Chrome</li>
+              <li>A Google account, to connect Google Calendar</li>
+              <li>Optional: a free Gemini API key from Google AI Studio, for reading PDFs and writing quizzes. @me works without one.</li>
+            </ul>
+          </details>
+        </div>
+        <ol class="isteps">
+          <li><h3>Unzip it</h3><p>Open the download. You'll get a folder called <code>atme-extension</code>. Move it somewhere it can stay, like your Documents folder.</p></li>
+          <li><h3>Turn on Developer mode</h3><p>Open <code>chrome://extensions</code> in Chrome and switch on <b>Developer mode</b> at the top right.</p></li>
+          <li><h3>Load @me</h3><p>Click <b>Load unpacked</b> and choose the <code>atme-extension</code> folder.</p></li>
+          <li><h3>Open it</h3><p>Pin @me from the puzzle-piece menu, click it, and choose <b>Open @me</b>. Type <code>/help</code> to see everything it can do. The <a href="https://github.com/kyuhan28/atme/blob/main/docs/SETUP.md">setup guide</a> covers your Gemini key, Google Calendar, and Canvas.</p></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="index.html" aria-label="@me home" style="font-size:20px">@me</a>
+    <span>Built at HackRU '26.</span>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="https://github.com/kyuhan28/atme">GitHub</a>
+    <a href="mailto:hankyumin05@gmail.com">Contact</a>
+    <span class="right">© 2026 @me</span>
+  </div>
+</footer>
+</body>
+</html>

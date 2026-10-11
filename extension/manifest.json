@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "@me Study Operator",
+  "short_name": "@me",
+  "version": "1.2.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj/5FO4mvCZtU0LfpyY/38aeCavv/2wNRYHcfJQ75Pc6R3jRFlF2+t10hDcbQXOuEG34C0yU45kXgkDU9T159F59a8lB8hpLLeJleJfltYZzoVyKzivUWhBoPFx5UhBAZovUPbZfVqEa0zcq4DkT9NeWbPvquIpwDLl8dWUs1SRQmDSvb+1iYrT8wzVxtwRXen1IMxhxk0RPoVfL8Mvhzvx9RJA1PQFdTydMoJTRaqYRbPKyS7y+OX+T0wSaReQJYse0aJwXkx7yoHpVB5yQ0w0cz0+nYLVXJt/RpGwHB7atxMiNu2U6ZdbpRlrvaD0+P7M0+JxHshFah4LOR0vaJ6QIDAQAB",
+  "description": "Turns your syllabi and Canvas deadlines into a study plan on your Google Calendar, then helps you stick to it.",
+  "homepage_url": "https://atme.tech",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "@me",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "identity",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://www.googleapis.com/*",
+    "https://oauth2.googleapis.com/*",
+    "*://*.youtube.com/*",
+    "*://*.instagram.com/*",
+    "*://*.tiktok.com/*",
+    "*://*.reddit.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+  "oauth2": {
+    "client_id": "127730524309-6bhg6rn7o8miliqcdhf6e8bm2sqg2hd4.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.app.created",
+      "https://www.googleapis.com/auth/calendar.freebusy",
+      "https://www.googleapis.com/auth/calendar.events.readonly"
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

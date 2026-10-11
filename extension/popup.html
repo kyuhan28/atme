@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages.css">
+</head>
+<body class="popup">
+  <header><b class="brand">@me</b><span class="muted" id="sub">Your study operator</span></header>
+  <div id="alert" class="alert" hidden></div>
+  <div id="next" class="block"></div>
+  <div class="row">
+    <button class="btn" id="open">Open @me</button>
+    <button class="btn ghost" id="quiz">＋ Surprise quiz</button>
+  </div>
+  <div class="row">
+    <button class="btn ghost" id="poll">Check Canvas now</button>
+    <button class="btn ghost" id="settings">Settings</button>
+  </div>
+  <p class="muted small" id="pollMsg"></p>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

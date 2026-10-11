@@ -1,0 +1,37 @@
+# Publishes atme.tech whenever the site or the extension changes on main.
+# It also zips the extension into the site, so atme.tech/atme-extension.zip is always the newest version.
+name: Deploy atme.tech
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', 'extension/**']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add the extension download to the site
+        run: |
+          if grep -q "PASTE_YOUR_CLIENT_ID" extension/manifest.json; then
+            echo "::warning::extension/manifest.json still has the placeholder client ID, so Google sign-in won't work in the download."
+          fi
+          cp -r extension atme-extension
+          rm -f atme-extension/README.md
+          zip -r site/atme-extension.zip atme-extension -x "*.DS_Store"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
