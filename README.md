@@ -37,7 +37,7 @@ Built at HackRU '26. Website: **[atme.tech](https://atme.tech)**
 |---|---|---|
 | ![Block menu](docs/screenshots/block-menu.png) | ![Focus session](docs/screenshots/focus-session.png) | ![Google event alert](docs/screenshots/google-event-alert.png) |
 
-## Install it (2 minutes)
+## Install it
 
 1. Download @me from **[atme.tech](https://atme.tech/#install)** (or the [latest release](../../releases/latest)) and unzip it.
 2. Open `chrome://extensions` in Google Chrome and turn on **Developer mode**.
